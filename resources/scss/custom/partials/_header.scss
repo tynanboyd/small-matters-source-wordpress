@@ -1,0 +1,30 @@
+.site-header {
+  background-color: $color-purple;
+  padding: 10px 24px;
+
+  @include MQ(M) {
+    padding: 20px 48px;
+  }
+
+  &__logo {
+    color: $white;
+    font-weight: 700;
+    font-size: 50px;
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+    position: relative;
+    z-index: 2;
+    line-height: 1;
+    text-transform: lowercase;
+
+    &:hover {
+      color: white;
+    }
+
+    span {
+      font-size: 25px;
+      display: block;
+      transform: translateY(10px);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{% extends 'base.twig' %}
+
+{% block pageContent %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-9">
+        <h1 class="page-title">{{ post.title }}</h1>
+        <p>You are viewing the WordPress frontend page. This page corresponds to <a target="_blank" href="{{ gatsby_link }}">{{ gatsby_link }}</a></p>
+      </div>
+    </div>
+  </div>
+
+  {% for component in post.meta('sections') %}
+    {% include 'partials/flexible-content/' ~ component.acf_fc_layout ~ '.twig' with { 'component': component, 'component_index': loop.index } %}
+  {% endfor %}
+
+{% endblock %}
